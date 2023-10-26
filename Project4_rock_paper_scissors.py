@@ -1,5 +1,10 @@
 '''
-Ameture code written by me
+I learn to write list which removes the extra else if code
+Secondly I learn to write condition(to apply logoic instrean of writting only else if statement
+(Thinks in term of logic instead of only if else statement)
+Thirdly write the print statement of list in one if else statement not  to write an extra code
+
+Major Learning reckeck code  and see how you can reduce the number of lines to write the code
 '''
 import random
 
@@ -29,37 +34,33 @@ scissors = '''
       (____)
 ---.__(___)
 '''
+game_image=[rock,paper,scissors]
+user_choice = int(input("What do you choose? Type 0 for Rock , 1 for Paper or 2 for Scissors."))
+print(f"user chose {user_choice}")
 
-human = int(input("What do you choose? Type 0 for Rock , 1 for Paper or 2 for Scissors."))
-if human == 0:
-    print(rock)
-elif human == 1:
-    print(paper)
-elif human == 2:
-    print(scissors)
-
-
-computer = random.randint(0,2)
-print(f"computer chose: {computer}")
-
-if computer == 0:
-    print(rock)
-elif computer == 1:
-    print(paper)
-elif computer == 2:
-    print(scissors)
-
-if human == 0 and computer == 2:
-    print("Hurrayyyyyy! you Win ")
-
-elif human == 2 and computer == 1:
-    print("Hurrayyyyyy! you Win ")
-
-elif human == 1 and computer == 0:
-    print("Hurrayyyyyy! you Win ")
-
+if user_choice < 0  or user_choice >= 3:
+    print("Game Ends As you chose invalid number ")
 else:
-    print("GAme Ends YOu have invalid number")
+    print(game_image[user_choice])
+    computer_choice = random.randint(0, 2)
+    print(f"computer chose: {computer_choice}")
+    print(game_image[computer_choice])
+
+    if user_choice == 0 and computer_choice == 2:
+        print("Hurray!!!!!! you Win ")
+
+    elif user_choice == 2 and computer_choice == 0:
+        print(" You Lose ")
+
+    elif computer_choice > user_choice:
+        print("You Lose ")
+
+    elif computer_choice == user_choice:
+        print("Draw ")
+    else:
+        print("You Win")
+
+
 
 
 
